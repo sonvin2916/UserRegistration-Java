@@ -75,5 +75,20 @@ public class UserValidateTest
         boolean result = validate.validatePassEightCharacters("son77");
         Assert.assertEquals(false,result);
     }
+    @Test
+    public void givenPassword_WhenUpperCase_ShouldReturnTrue()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result = validate.validateUpperCase("abc@Xyz123");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenPassword_NotCorrect_ShoulReturnTrue()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result = validate.validateUpperCase("abc@123");
+        Assert.assertEquals(false,result);
+    }
+
 
 }
