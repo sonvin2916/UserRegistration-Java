@@ -3,7 +3,8 @@ import com.uservalidate.UserValidate;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class UserValidateTest {
+public class UserValidateTest
+{
     @Test
     public void givenFirstName_WithCaps_ShouldReturnTrue()
     {
