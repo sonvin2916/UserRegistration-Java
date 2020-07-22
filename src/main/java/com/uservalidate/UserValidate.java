@@ -13,6 +13,7 @@ public class UserValidate
     private static final String PASSWORD_MINEIGHT_CHARACTERS="([a-zA-Z0-9@#!]){8,}$";
     private static final String PASSWORD_UPPER_CASE="^([a-z0-9@#!]*)[A-Z]+([a-z0-9@#!]*)$";
     private static final String PASSWORD_NUMERIC_PATTERN="^([a-zA-Z@#!]*[0-9]+[a-zA-Z@#!]*)$";
+    private static final String PASSWORD_SPECIAL_CHARACTER="([a-zA-Z0-9]*)[^a-zA-Z_0-9\\s]([a-zA-Z0-9]*)$";
 
     public boolean validateFirstName(String fname)
     {
@@ -47,6 +48,11 @@ public class UserValidate
     public boolean validateNumeric(String password)
     {
         Pattern pattern = Pattern.compile(PASSWORD_NUMERIC_PATTERN);
+        return pattern.matcher(password).matches();
+    }
+    public boolean validateSpecialCharacter(String password)
+    {
+        Pattern pattern =  Pattern.compile(PASSWORD_SPECIAL_CHARACTER);
         return pattern.matcher(password).matches();
     }
 }

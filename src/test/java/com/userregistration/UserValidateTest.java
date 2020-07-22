@@ -104,6 +104,21 @@ public class UserValidateTest
         Assert.assertEquals(false,result);
     }
 
+   @Test
+    public void givenPassword_WhenContainSpecialCharacter_ShoulReturnTrue()
+   {
+       UserValidate validate = new UserValidate();
+       boolean result = validate.validateSpecialCharacter("bridgelabs@123");
+       Assert.assertEquals(true,result);
+
+   }
+   @Test
+   public void givenPassword_WhenInCorrect_ShoulReturnFalse()
+   {
+       UserValidate validate = new UserValidate();
+       boolean result = validate.validateSpecialCharacter("bridgelabs123");
+       Assert.assertEquals(false, result);
+   }
 
 
-}
+   }
