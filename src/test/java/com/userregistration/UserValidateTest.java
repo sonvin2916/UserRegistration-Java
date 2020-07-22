@@ -61,5 +61,19 @@ public class UserValidateTest
         boolean result = validate.validateMobileNumber("91 785496");
         Assert.assertEquals(false,result);
     }
+    @Test
+    public void givenPassword_WithEightCharacters_ShouldReturnTrue()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result = validate.validatePassEightCharacters("sonal777");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenPassword_WhenIncorrect_ShouldReturnTrue()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result = validate.validatePassEightCharacters("son77");
+        Assert.assertEquals(false,result);
+    }
 
 }
