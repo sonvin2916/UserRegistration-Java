@@ -89,6 +89,21 @@ public class UserValidateTest
         boolean result = validate.validateUpperCase("abc@123");
         Assert.assertEquals(false,result);
     }
+    @Test
+    public void givenPassword_WhenContainNumeric_ShoulReturnTrue()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result = validate.validateNumeric("bridge@labz123");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenPassword_WhenIncorrect_ShoulReturnFalse()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result = validate.validateNumeric("bridge@labs");
+        Assert.assertEquals(false,result);
+    }
+
 
 
 }

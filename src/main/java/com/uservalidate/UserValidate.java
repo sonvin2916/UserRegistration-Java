@@ -12,6 +12,7 @@ public class UserValidate
     private static final String MOBILE_PATTERN="^[0-9]{2}[[ ]][0-9]{10}$";
     private static final String PASSWORD_MINEIGHT_CHARACTERS="([a-zA-Z0-9@#!]){8,}$";
     private static final String PASSWORD_UPPER_CASE="^([a-z0-9@#!]*)[A-Z]+([a-z0-9@#!]*)$";
+    private static final String PASSWORD_NUMERIC_PATTERN="^([a-zA-Z@#!]*[0-9]+[a-zA-Z@#!]*)$";
 
     public boolean validateFirstName(String fname)
     {
@@ -41,7 +42,11 @@ public class UserValidate
     public boolean validateUpperCase(String password)
     {
         Pattern pattern = Pattern.compile(PASSWORD_UPPER_CASE);
-                return pattern.matcher(password).matches();
+        return pattern.matcher(password).matches();
     }
-
+    public boolean validateNumeric(String password)
+    {
+        Pattern pattern = Pattern.compile(PASSWORD_NUMERIC_PATTERN);
+        return pattern.matcher(password).matches();
+    }
 }
