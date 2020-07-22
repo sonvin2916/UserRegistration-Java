@@ -47,6 +47,19 @@ public class UserValidateTest
         boolean result = validate.validateEmail("abc.xyz@com");
         Assert.assertEquals(false,result);
     }
-
+    @Test
+    public void givenMobileNumber_WhenCorrectFormat_ShoulReturnTrue()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result = validate.validateMobileNumber("91 7895412869");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenMobileNumber_WhenIncorrect_ShoulReturnTrue()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result = validate.validateMobileNumber("91 785496");
+        Assert.assertEquals(false,result);
+    }
 
 }
