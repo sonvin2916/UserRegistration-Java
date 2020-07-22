@@ -33,6 +33,20 @@ public class UserValidateTest
         boolean result = validate.validateFirstName("Ch");
         Assert.assertEquals(false,result);
     }
-   
-    
+    @Test
+    public void givenEmail_IfValid_ShouldReturnTrue()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result=validate.validateEmail("sonalchougule07@gmail.com");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenEmail_IfInvalid_ShouldReturnFalse()
+    {
+        UserValidate validate = new UserValidate();
+        boolean result = validate.validateEmail("abc.xyz@com");
+        Assert.assertEquals(false,result);
+    }
+
+
 }
