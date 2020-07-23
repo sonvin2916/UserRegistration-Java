@@ -119,6 +119,20 @@ public class UserValidateTest
        boolean result = validate.validateSpecialCharacter("bridgelabs123");
        Assert.assertEquals(false, result);
    }
-
-
+   @Test
+    public void givenPassword_WhenValid_ShouldReturnTrue()
+   {
+       UserValidate validate = new UserValidate();
+       boolean result = validate.validateEmail("abc111@abc.com");
+       Assert.assertEquals(true,result);
    }
+   @Test
+    public void givenPassword_WhenInvalid_ShouldReturnFalse()
+   {
+       UserValidate validate = new UserValidate();
+       boolean result = validate.validateEmail("abc123@.com");
+       Assert.assertEquals(false,result);
+   }
+
+
+}

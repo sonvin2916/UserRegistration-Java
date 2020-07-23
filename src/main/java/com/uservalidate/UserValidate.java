@@ -14,6 +14,7 @@ public class UserValidate
     private static final String PASSWORD_UPPER_CASE="^([a-z0-9@#!]*)[A-Z]+([a-z0-9@#!]*)$";
     private static final String PASSWORD_NUMERIC_PATTERN="^([a-zA-Z@#!]*[0-9]+[a-zA-Z@#!]*)$";
     private static final String PASSWORD_SPECIAL_CHARACTER="([a-zA-Z0-9]*)[^a-zA-Z_0-9\\s]([a-zA-Z0-9]*)$";
+    private static final String PASSWORD_PATTERN="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})$";
 
     public boolean validateFirstName(String fname)
     {
@@ -55,4 +56,10 @@ public class UserValidate
         Pattern pattern =  Pattern.compile(PASSWORD_SPECIAL_CHARACTER);
         return pattern.matcher(password).matches();
     }
+    public boolean validateEmailSample(String password)
+    {
+        Pattern pattern= Pattern.compile(PASSWORD_PATTERN);
+        return pattern.matcher(password).matches();
+    }
+
 }
